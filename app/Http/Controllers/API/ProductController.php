@@ -40,7 +40,7 @@ class ProductController extends Controller
             }
         }
 
-        $product = Product::with(['categories', 'galleries']);
+        $product = Product::with(['category', 'galleries']);
 
         if($name){
             $product->where('name', 'like', '%' . $name . '%');
