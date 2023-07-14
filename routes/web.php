@@ -5,6 +5,7 @@ use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductGalleryController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,6 +31,9 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function() {
             ]);
             Route::resource('transaction', TransactionController::class)->only([
                 'index', 'show', 'edit', 'update'
+            ]);
+            Route::resource('user', UserController::class)->only([
+                'index', 'edit', 'update', 'destroy'
             ]);
         });
     });
